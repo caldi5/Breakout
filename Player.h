@@ -12,7 +12,7 @@ public:
 	void moveLeft();
 	void moveRight();
 	void laefy();
-	void score();
+	void score(int toAdd = 1);
 	int getScore();
 	bool IsAlive();
 protected:

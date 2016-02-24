@@ -1,12 +1,11 @@
 #include "Player.h"
 
-Player::Player(sf::Vector2f position, sf::Vector2f size, sf::Color color) : Rectangle(position, size, color)
+Player::Player(sf::Vector2f position, sf::Vector2f size, sf::Color color) : Rectangle(position, size, color, 0)
 {
 	speed = 4;
 	lives = 3;
 	playerScore = 0;
 }
-
 
 Player::~Player()
 {
@@ -42,9 +41,9 @@ void Player::laefy()
 		isAlive = false;
 }
 
-void Player::score()
+void Player::score(int toAdd)
 {
-	playerScore++;
+	playerScore += toAdd;
 }
 
 int Player::getScore()

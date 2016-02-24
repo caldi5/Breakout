@@ -1,10 +1,11 @@
 #include "Rectangle.h"
 
 
-Rectangle::Rectangle(sf::Vector2f position, sf::Vector2f size, sf::Color color) : PhysicalObject(position)
+Rectangle::Rectangle(sf::Vector2f position, sf::Vector2f size, sf::Color color, int value) : PhysicalObject(position)
 {
 	this->size = size;
 	this->color = color;
+	this->value = value;
 	isAlive = true;
 
 	rectangle.setSize(size);
@@ -71,6 +72,7 @@ bool Rectangle::checkCollisoin(Ball *ball)
 	return false;
 }
 
+// Useless method
 void Rectangle::collisionAction()
 {
 	isAlive = false;
@@ -79,4 +81,14 @@ void Rectangle::collisionAction()
 sf::Vector2f Rectangle::getPos()
 {
 	return position;
+}
+
+void Rectangle::addValue()
+{
+	value++;
+}
+
+int Rectangle::getValue()
+{
+	return value;
 }
