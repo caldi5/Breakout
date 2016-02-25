@@ -97,7 +97,7 @@ int main()
 
 			if ((ball.getPosition().y + ball.getRad()) >= windowSize.y)
 				player.laefy();
-			if (!player.IsAlive())
+			if (!player.IsAlive() || player.getScore() == 100)
 			{
 				Window.close();
 				time = clock.getElapsedTime();
@@ -109,7 +109,6 @@ int main()
 			{
 				recs[i]->Draw(Window);
 			}
-
 			player.Draw(Window);
 			ball.Draw(Window);
 			Window.display();
